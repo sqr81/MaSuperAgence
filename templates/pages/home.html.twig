@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block title 'Pat & Soaze' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1>Pat & Soaze</h1>
+        <p>Vous voici donc de nouveau chez nous...</p>
+        <p>Entrez donc.
+        Au fil de ces pages vous trouverez une présentation d'une part de nos créations, aquarelles et photos, présentées en album.
+        Nous vous laissons errer, papillonner d'aquarelle en image au gré de votre envie et vous souhaitons d'y prendre plaisir.
+        </p> 
+    </div>
+    <div class="container mt-4">
+        <h2>Les dernières photos</h2>
+        <div class="row flex">
+            {% for property in properties %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size: 2rem">
+                                <a href="{{ path("property.show", {id: property.id}) }}">{{ property.title}}</a>
+                            </h5>
+                            <p class="card-text">{{ property.subject}}</p>
+                            <div class="text">{{ property.description}}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h2>Les dernières aquarelles</h2>
+        <div class="row flex">
+            {% for aquarelle in aquarelles %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size: 2rem">
+                                <a href="{{ path("aquarelle.show", {id: aquarelle.id}) }}">{{ aquarelle.title}}</a>
+                            </h5>
+                            <p class="card-text">{{ aquarelle.subject}}</p>
+                            <div class="text">{{ aquarelle.description}}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
