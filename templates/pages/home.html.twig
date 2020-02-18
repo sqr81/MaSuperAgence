@@ -17,6 +17,7 @@
             {% for property in properties %}
                 <div class="col-3">
                     <div class="card">
+                    <img src="#" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title" style="font-size: 2rem">
                                 <a href="{{ path("property.show", {id: property.id}) }}">{{ property.title}}</a>
@@ -35,6 +36,7 @@
             {% for aquarelle in aquarelles %}
                 <div class="col-3">
                     <div class="card">
+                    <img src="#" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title" style="font-size: 2rem">
                                 <a href="{{ path("aquarelle.show", {id: aquarelle.id}) }}">{{ aquarelle.title}}</a>

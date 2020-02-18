@@ -3,8 +3,32 @@
 {% block title aquarelle.title %}
 
 {% block body %}
+    <div class="jumbotron">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4 mt-4">
+                    <h1>{{aquarelle.title}}</h1>
+                    <a href="#" class="btn btn-primary my-4">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container mt-4">
-        <h1>{{aquarelle.title}}</h1>
+            <div class="row">
+                <div class="col md-8">
+                    <h4> Sujet:</h4>{{ aquarelle.subject }}
+                
+                    <h4>Description:</h4>{{ aquarelle.description | nl2br }}
+                </div>
+            </div>
+    </div    
+
+
+
 {% endblock %}
+
 
 
