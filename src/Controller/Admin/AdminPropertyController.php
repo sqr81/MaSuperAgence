@@ -97,7 +97,7 @@ et on lui donne un nom ($repository)*/
      */
     public function delete(Property $property, Request $request)
     {   
-        if ($this->isCsrfTokenValid('delete' . $property->getId(), $request->get('token') )){
+        if ($this->isCsrfTokenValid('delete'.$property->getId(), $request->get('_token') )){
             $this->em->remove($property);
             $this->em->flush();
             $this->addFlash('success', 'Bien supprimé');          
